@@ -1,20 +1,17 @@
 package com.company;
 
+import java.io.*;
+
 public class Main {
 
-    public static void main(String[] args) {
-//        String text = "You are my sunshine.";
-//        String txt = "brx duh pb vxqvklqh.";
-//        Tsesar first = new Tsesar();
-//        first.print1(text, 3);
-//        first.print2(txt, 3);
-
+    public static void main(String[] args) throws IOException {
         MyContainer first = new MyContainer();
         first.setVisible(true);
 
-//        Caesar cs = new Caesar();
-//        System.out.println(cs.print2(txt, 3));
-//        System.out.println(cs.print1(text, 3));
+//      C:\\University\\SECOND year\\ІІ СЕМЕСТР\\BIS\\Lab_1\\data.txt
+        PrintStream errStream = System.err;
+        System.setErr(new PrintStream("error.log"));
+
 
     }
 }

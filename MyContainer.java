@@ -11,7 +11,7 @@ public class MyContainer extends JFrame {
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container =  super.getContentPane();
-        container.setLayout(new GridLayout(7, 0, 1, 1));
+        container.setLayout(new GridLayout(9, 0, 1, 1));
 
         Fields allFields = new Fields(container);
     }

@@ -1,4 +1,5 @@
 package com.company;
+import java.io.*;
 
 public class Caesar implements PressMark{
     private static final String alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -14,7 +15,8 @@ public class Caesar implements PressMark{
 
     public char symbolToDecrypt(char symbol, int key){
         if (alphabet.indexOf(symbol) != -1) {
-            return alphabet.charAt((alphabet.indexOf(symbol) + (alphabet.length() - key % alphabet.length())) % alphabet.length());
+            return alphabet.charAt((alphabet.indexOf(symbol) +
+                    (alphabet.length() - key % alphabet.length())) % alphabet.length());
         }else{
             return symbol;
         }
@@ -41,6 +43,22 @@ public class Caesar implements PressMark{
             str.append(ch);
         }
         return str.toString();
+    }
+
+    public String fileReader(String fileWay) throws IOException{
+
+        StringBuilder newFileWay = new StringBuilder();
+        BufferedReader objectForWay = new BufferedReader(new FileReader(fileWay));
+        String text;
+
+        try (objectForWay) {
+            while ((text = objectForWay.readLine()) != null) {
+                newFileWay.append(text)
+                        .append(System.lineSeparator());
+            }
+        }
+
+        return newFileWay.toString();
     }
 
 }
